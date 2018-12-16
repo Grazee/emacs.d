@@ -1,0 +1,88 @@
+((("asn" .
+   [1 0 0])
+  ("IPAddress" .
+   [0 0 0 0 0 0 0 0 1])
+  ("key-translation-map" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("define-key" .
+   [0 0 0 0 0 0 0 1 0 0])
+  ("jedi:doc-mode" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("ipadd" .
+   [2 0 0 0 0])
+  ("delete-backward-char" .
+   [0 0 0 0 0 0 0 0 0 1 1 3 0 0 0 0 0 0 0 0])
+  ("jedi:show-doc" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("jedi" .
+   [2 0 0 0])
+  ("seq" .
+   [4 0 0])
+  (":bind" .
+   [2 0 0 1 0])
+  ("jedi:complete-on-dot" .
+   [0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0])
+  (":config" .
+   [1 0 0 0 1 0 0])
+  ("local-set-key" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("elpy-goto-definition-other-window" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("key-binding" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("progn" .
+   [1 0 0 0 0])
+  ("ans" .
+   [2 0 0])
+  ("nil" .
+   [5 0 0])
+  ("import" .
+   [0 0 0 0 1 0])
+  ("Elpy" .
+   [0 0 0 1])
+  ("use-package" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("python-shell-interpreter" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("elpy-rpc-python-command" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1])
+  ("setq" .
+   [15 0 0 0])
+  ("require" .
+   [0 0 0 0 1 0 0])
+  ("init_org" .
+   [1 0 0 0 0 0 0 0])
+  ("elpy-rpc" .
+   [0 0 0 0 0 0 0 1])
+  ("highlight" .
+   [0 0 0 0 1 0 0 0 0])
+  ("global-hl-line-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("kbd" .
+   [2 0 0])
+  ("comment-or-uncomment-region" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("comment-line" .
+   [3 0 0 0 0 0 0 0 0 0 0 1])
+  ("comment-multi-line" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("jedi:get-in-function-call-delay" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("content" .
+   [0 0 0 0 1 0 1])
+  ("ip" .
+   [2 0])
+  ("IPSegment" .
+   [0 0 1 0 0 0 0 0 0])
+  ("jedi:doc-hook" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("jedi:key-show-doc" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("jedi:ac-setup" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("global-set-key" .
+   [0 0 0 0 0 0 0 0 0 0 2 0 0 0])
+  ("company-mode" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("global" .
+   [0 0 0 0 0 1])))
