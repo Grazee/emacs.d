@@ -1,3 +1,6 @@
+;; 设置环境变量
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+
 ;; 用y和n代替yes和no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -12,9 +15,11 @@
 ;; 关掉emacs欢迎页
 (setq inhibit-startup-message t)
 
-;; 高亮当前光标行
-(global-hl-line-mode t)
+;; 使用C-v和C-t可以移动到文件头尾
+(setq scroll-error-top-bottom t)
 
+
+;; Dired Mode
 ;; Dired Mode下不打开新的缓冲区
 (put 'dired-find-alternate-file 'disabled nil)
 ;; 延迟加载Dired Mode
@@ -25,5 +30,8 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
+
+;; 不要工具栏
+(tool-bar-mode -1)
 
 (provide 'init_setting)

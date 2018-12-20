@@ -1,7 +1,10 @@
 (require 'package)
 
 ;; 显示行号
-(linum-mode t)
+;;(global-linum-mode t)
+
+;; 高亮当前光标行
+(global-hl-line-mode t)
 
 ;; 选中文字后输入会进行替换
 (delete-selection-mode t)
@@ -13,10 +16,10 @@
   (smartparens-mode t))
 
 ;; 新建窗口之后自动把光标移动过去
-;; (use-package popwin
-;;   :ensure t
-;;   :config
-;;   (popwin-mode))
+(use-package popwin
+  :ensure t
+  :config
+  (popwin-mode))
 
 ;; 在minibuff显示相关的快捷键
 (use-package which-key

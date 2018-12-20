@@ -3,12 +3,21 @@
 ;; 代码检查
 (use-package flycheck
   :ensure t
-  :init
-  (global-flycheck-mode t))
+  :hook
+  (progn
+    (python-mode . flycheck-mode-hook)
+    (c++-mode . flycheck-mode)
+    (emacs-lisp-mode . flycheck-mode)))
 ;;  (flycheck-select-checker 'python-flake8))
 
 ;; Company自动补全
-(global-company-mode t)
+(use-package company
+  :ensure t
+  :hook
+  (progn
+    (python-mode . company-mode)
+    (emacs-lisp-mode . company-mode)))
+
 ;; 不要延迟
 (setq company-idle-delay 0)
 ;; 使用C-n和C-p来选择补全
@@ -29,6 +38,6 @@
 ;;     (local-set-key (kbd "C-h") 'delete-backward-char)))
 
 ;; 多行注释
-(global-set-key (kbd "s-/") 'comment-line)
+(global-set-key (kbd "M-/") 'comment-line)
 
 (provide 'init_coding)
