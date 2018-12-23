@@ -1,6 +1,9 @@
 ;; 设置环境变量
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
+;; 隐藏滑动条
+(scroll-bar-mode -1)
+
 ;; 用y和n代替yes和no
 (defalias 'yes-or-no-p 'y-or-n-p)
 

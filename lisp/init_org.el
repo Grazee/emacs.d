@@ -62,6 +62,26 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+;; 更改导出pdf的引擎为Xe LaTex
+(setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                              "xelatex -interaction nonstopmode %f"))
+
+;; 导出pdf的一个模板
+(require 'ox-latex)
+(add-to-list 'org-latex-classes
+		  '("wc-article"
+		    "\\documentclass{article}
+                     \\usepackage{xeCJK}   %支持中文
+                     \\usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref}   % 不要红色边框
+                     [NO-DEFAULT-PACKAGES]
+                     [PACKAGES]
+                     [EXTRA]"
+         ("\\section{%s}" . "\\section*{%s}")
+         ("\\subsection{%s}" . "\\subsection*{%s}")
+         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+         ("\\paragraph{%s}" . "\\paragraph*{%s}")
+         ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 ;;;一些设置
 ;; 自动换行
 (add-hook 'org-mode-hook 'toggle-truncate-lines)

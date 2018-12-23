@@ -19,7 +19,7 @@
 (require 'init_coding)
 (require 'init_elisp)
 (require 'init_python)
-(require 'init_swift)
+;;(require 'init_swift)
 (require 'init_markdown)
 
 ;; 默认全屏

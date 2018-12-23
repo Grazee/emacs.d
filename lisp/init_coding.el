@@ -5,7 +5,7 @@
   :ensure t
   :hook
   (progn
-    (python-mode . flycheck-mode-hook)
+    (python-mode . flycheck-mode)
     (c++-mode . flycheck-mode)
     (emacs-lisp-mode . flycheck-mode)))
 ;;  (flycheck-select-checker 'python-flake8))
