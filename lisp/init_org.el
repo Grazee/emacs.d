@@ -62,20 +62,47 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+;; 导出HTML时删除XML标签
+(setq org-html-xml-declaration (quote (("html" . "")
+                                       ("was-html" . "<?xml version=\"1.0\" encoding=\"%s\"?>")
+                                       ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>"))))
+
+;; 关于导出pdf的设置
+(require 'ox-latex)
+
 ;; 更改导出pdf的引擎为Xe LaTex
 (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
                               "xelatex -interaction nonstopmode %f"))
+(setq latex-run-command "xelatex")
+
+(setq org-latex-listings t)
+(add-to-list 'org-latex-packages-alist '("" "listings"))
+(add-to-list 'org-latex-packages-alist '("" "color"))
+
+;; latex代码高亮的插件
+(setq org-latex-listings 'minted)
+(setq org-latex-minted-options
+      '(("Frame" "lines")
+        ("fontsize" "\\scriptsize")
+        ("linenos" "")))
 
 ;; 导出pdf的一个模板
-(require 'ox-latex)
 (add-to-list 'org-latex-classes
-		  '("wc-article"
-		    "\\documentclass{article}
-                     \\usepackage{xeCJK}   %支持中文
-                     \\usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref}   % 不要红色边框
-                     [NO-DEFAULT-PACKAGES]
-                     [PACKAGES]
-                     [EXTRA]"
+	     '("wc-article"
+	       "\\documentclass[12pt,a4paper]{article}   % 基础样式为article，正常字体大小为12pt
+	       \\usepackage[a4paper,scale=0.8]{geometry}   % 页边距
+	       \\usepackage{hyperref}
+	       \\linespread{1.36}   % 行距
+	       \\usepackage{xeCJK}
+	       \\setCJKmainfont{PingFang SC}   % 中文字体
+	       \\setCJKmonofont{PingFang SC}
+	       \\setCJKsansfont{PingFang SC}
+	       \\setmainfont{Menlo}   % 英文字体
+	       \\setsansfont{Menlo}
+	       \\setmonofont{Menlo}
+	       [NO-DEFAULT-PACKAGES]
+	       [PACKAGES]
+	       [EXTRA]"
          ("\\section{%s}" . "\\section*{%s}")
          ("\\subsection{%s}" . "\\subsection*{%s}")
          ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
@@ -87,11 +114,21 @@
 (add-hook 'org-mode-hook 'toggle-truncate-lines)
 ;; 自动缩进（有点bug）
 ;;(setq org-startup-indented t)
-;;(setq org-indent-mode t)
+;; (setq org-indent-mode t)
+(add-hook 'org-mode-hook 'org-indent-mode)
 ;; 图文混编
 (setq org-startup-with-inline-images t)
 (setq org-image-actual-width nil)
 (add-hook 'org-mode-hook 'org-display-inline-images)
+
+;; ditaa绘图
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '(;; other Babel languages
+    (ditaa . t)
+    (plantuml . t)
+    (dot . t)
+    ))
 
 (setq visual-line-mode t)
 

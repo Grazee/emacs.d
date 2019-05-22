@@ -8,7 +8,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; 打印详细的错误信息
-(setq debug-on-error t)
+(setq debug-on-error nil)
 
 ;; 不产生备份文件
 (setq make-backup-files nil)

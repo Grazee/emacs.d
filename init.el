@@ -10,10 +10,12 @@
 (require 'init_key)     ;; 快捷键
 (require 'init_package) ;; 包管理相关
 (require 'init_theme)   ;; 主题
+(require 'init_proxy)   ;; 网络代理
 
 ;; 编辑器
 (require 'init_editor)  ;; 编辑器相关，光标移动什么的
 (require 'init_org)     ;; Org编辑模式
+(require 'table)        ;; 表格编辑器
 
 ;; 代码
 (require 'init_coding)
@@ -21,6 +23,7 @@
 (require 'init_python)
 ;;(require 'init_swift)
 (require 'init_markdown)
+(require 'init_lisp)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)

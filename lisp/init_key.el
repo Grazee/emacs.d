@@ -1,3 +1,9 @@
+;; Mac 使用Option作为meta
+(setq mac-option-key-is-meta t
+      mac-command-key-is-meta nil
+      mac-command-modifier 'none
+      mac-option-modifier 'meta)
+
 ;; C-h 变成删除键
 (global-set-key "\C-h" 'delete-backward-char)
 

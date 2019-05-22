@@ -1,7 +1,10 @@
 (require 'package)
 
 ;; 显示行号
-;;(global-linum-mode t)
+;; (global-linum-mode t)
+
+;开启 whitespace-mode 对制表符和行为空格高亮，很丑
+;; (whitespace-mode t)
 
 ;; 高亮当前光标行
 (global-hl-line-mode t)
@@ -47,17 +50,26 @@
   )
 
 ;; 一次性把所有连续的空格删掉
-(use-package hungry-delete
-  :ensure t
-  :config
-  (global-hungry-delete-mode)
-  (setq hungry-delete-chars-to-skip " \t\r\f\v"))
+;; (use-package hungry-delete
+;;   :ensure t
+;;   :config
+;;   (global-hungry-delete-mode)
+;;   (setq hungry-delete-chars-to-skip " \t\r\f\v"))
 
 ;; 选择模式的扩展
 (use-package expand-region
   :ensure t
   :config
   (global-set-key (kbd "C-u") 'er/expand-region))
+
+;; 多光标编辑模式
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (progn
+    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+    (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)))
 
 ;; 选中相同，比如用来修改变量名（快捷键"C-;"）
 ;; (use-package iedit
@@ -89,5 +101,14 @@
     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
     (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
     ))
+
+;; M-x增强版
+(use-package smex
+  :config
+  (progn
+    (global-set-key (kbd "M-x") 'smex)
+    (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+    ;; This is your old M-x.
+    (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
 
 (provide 'init_editor)

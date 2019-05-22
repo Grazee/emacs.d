@@ -1,4 +1,5 @@
 (require 'package)
+;;(require 'use-package)
 
 (setq package-enable-at-startup nil)
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
