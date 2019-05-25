@@ -10,16 +10,15 @@
   (progn
     (python-mode . flycheck-mode)
     (c++-mode . flycheck-mode)))
-;;    (emacs-lisp-mode . flycheck-mode)))
-;;  (flycheck-select-checker 'python-flake8))
 
 ;; Company自动补全
 (use-package company
   :ensure t
   :hook
   (progn
-    ;; (python-mode . company-mode)
-    (emacs-lisp-mode . company-mode)))
+    (emacs-lisp-mode . company-mode)
+    (c++-mode . company-mode)
+    (makefile-mode . company-mode)))
 
 ;; 不要延迟
 (setq company-idle-delay 0)

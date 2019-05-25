@@ -24,6 +24,7 @@
 ;;(require 'init_swift)
 (require 'init_markdown)
 (require 'init_lisp)
+(require 'init_cpp)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)
