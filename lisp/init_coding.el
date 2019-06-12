@@ -14,11 +14,14 @@
 ;; Company自动补全
 (use-package company
   :ensure t
+  :config
+  (setq completion-ignore-case t)
   :hook
   (progn
     (emacs-lisp-mode . company-mode)
     (c++-mode . company-mode)
-    (makefile-mode . company-mode)))
+    (makefile-mode . company-mode)
+    (c-mode . company-mode)))
 
 ;; 不要延迟
 (setq company-idle-delay 0)

@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (jedi which-key use-package try solarized-theme smex smartparens slime popwin org-bullets multiple-cursors markdown-mode hungry-delete flycheck expand-region elpy counsel company-jedi beacon ace-window))))
+    (swift-mode which-key use-package try solarized-theme smex smartparens slime popwin org-bullets multiple-cursors markdown-mode jedi hungry-delete flycheck expand-region elpy counsel company-jedi beacon ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

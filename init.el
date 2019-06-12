@@ -10,7 +10,8 @@
 (require 'init_key)     ;; 快捷键
 (require 'init_package) ;; 包管理相关
 (require 'init_theme)   ;; 主题
-(require 'init_proxy)   ;; 网络代理
+(if (eq system-type 'darwin)
+    (require 'init_proxy))   ;; 网络代理
 
 ;; 编辑器
 (require 'init_editor)  ;; 编辑器相关，光标移动什么的

@@ -4,11 +4,12 @@
 ;; 中文与英文字体设置
 ;; 英文字体
 (set-face-attribute'default nil :font "Menlo 14")
-;; 中文字体
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-		    charset
-		    (font-spec :family "Pingfang SC" :size 16)))
+;; 中文字体，在MacOS下才设置
+(if (eq system-type 'darwin)
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font)
+                        charset
+                        (font-spec :family "Pingfang SC" :size 16))))
 
 ;; 捕获
 ;; 设置默认文件地址

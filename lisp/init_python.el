@@ -1,5 +1,12 @@
 (require 'package)
 
+
+(if (eq system-type 'darwin)
+    ;; MacOS的python3目录
+    (setq python3Dic "/usr/local/bin")
+  ;; 其他Linux系统的python3目录
+  (setq python3Dic "/usr/bin"))
+
 ;; python设置
 (defun my-python-mode-config ()
   (setq python-indent 4
@@ -7,10 +14,10 @@
         default-tab-width 4
 
         ;; 设置 run-python 的参数
-	python-shell-interpreter "/usr/local/bin/python3"
+	python-shell-interpreter (concat python3Dic "/python3")
 	python-shell-completion-native-enable nil
-	py-python-command "/usr/local/bin/python3"
-	exec-path (append exec-path '("/usr/local/bin"))
+	py-python-command (concat python3Dic "/python3")
+	exec-path (append exec-path '(python3Dic))
 	python-shell-completion-native-disabled-interpreters '("python")))
 
 (add-hook 'python-mode-hook 'my-python-mode-config)
