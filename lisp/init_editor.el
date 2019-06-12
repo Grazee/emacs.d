@@ -104,6 +104,7 @@
 
 ;; M-x增强版
 (use-package smex
+  :ensure t
   :config
   (progn
     (global-set-key (kbd "M-x") 'smex)
