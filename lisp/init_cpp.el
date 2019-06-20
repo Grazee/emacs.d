@@ -1,5 +1,15 @@
 ;; (require 'package)
 
+;; 快速跳转到函数定义位置（自动标记tag）
+(use-package ggtags
+  :ensure t
+  :config
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                (ggtags-mode 1))))
+)
+
 ;; 配置C++模式缩进
 (add-hook
  'c++-mode
@@ -15,5 +25,14 @@
  'makefile-mode
  (setq-default default-tab-width 4
                tab-width 4))
+
+;; 预设代码块
+(use-package yasnippet
+  :ensure t
+  :config
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                (ggtags-mode 1)))))
 
 (provide 'init_cpp)

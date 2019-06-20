@@ -3,6 +3,16 @@
 ;; 关闭自动缩进
 (set (make-local-variable 'electric-indent-mode) nil)
 
+;; 项目管理
+;; (use-package projectile
+;;   :ensure t
+;;   :bind
+;;   ("C-c p" . projectile-command-map)
+;;   :init
+;;   (lambda ()
+;;     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+;;     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+
 ;; 代码检查
 (use-package flycheck
   :ensure t

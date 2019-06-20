@@ -3,13 +3,14 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	hungry-delete-backward
-	hungry-delete-forward
-	org-beginning-of-line
-	org-end-of-line
-	org-force-self-insert
-	))
+        hungry-delete-backward
+        hungry-delete-forward
+        indent-for-tab-command
+        org-beginning-of-line
+        org-end-of-line
+        org-force-self-insert
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	))
+        ))
