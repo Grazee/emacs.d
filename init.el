@@ -26,6 +26,7 @@
 (require 'init_markdown)
 (require 'init_lisp)
 (require 'init_cpp)
+(require 'init_go)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)

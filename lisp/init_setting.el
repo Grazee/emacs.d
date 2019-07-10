@@ -1,6 +1,9 @@
 ;; 设置环境变量
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
+;; 自动加载外部修改过的文件
+(global-auto-revert-mode 1)
+
 ;; 隐藏滑动条
 (scroll-bar-mode -1)
 
