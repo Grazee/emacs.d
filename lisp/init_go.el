@@ -5,21 +5,28 @@
 
 ;; 设置路径变量
 (setq gopath "/Users/wc/Code/CoffeeProxy")
+;; (setq gopath "/Users/wc/Code/Temp")
 (setenv "GOPATH" gopath)
 (setenv "PATH" (concat (getenv "PATH")
                        (concat ":"
                                (concat gopath "/bin"))))
+;; (add-to-list 'exec-path (expand-file-name (concat gopath "/bin/godef")))
 
 (use-package go-mode
   :ensure t
   :init
   (progn
     (setq gofmt-command "goimports")
-    
-    (add-hook 'before-save-hook 'gofmt-before-save)
-    (bind-key [remap find-tag] #'godef-jump))
+    (setq godef-command (concatenate 'string gopath "/bin/godef"))
+    (add-hook 'before-save-hook 'gofmt-before-save))
+    ;; (bind-key [remap find-tag] #'godef-jump))
   :config
   (add-hook 'go-mode-hook 'electric-pair-mode))
+  ;; 查看函数定义
+  ;; (use-package go-eldoc
+  ;;   :ensure t
+  ;;   :config
+  ;;   (go-eldoc-setup)))
 
 ;; go的补全
 (use-package company-go
@@ -36,12 +43,6 @@
     ;;   (set (make-local-variable 'company-backends) '(company-go))
     ;;   (company-mode t))
     ;; (add-hook 'go-mode-hook 'inkel/company-go-hook)))
-
-;; 查看函数定义
-(use-package go-eldoc
-  :ensure t
-  :config
-  (go-eldoc-setup))
 
 ;; 查找函数的调用
 (use-package go-guru

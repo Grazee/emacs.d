@@ -10,6 +10,13 @@
 ;; C-x h 变成文档键
 (global-set-key "\C-xh" 'help-command)
 
+;; C-o 切换窗口
+(global-set-key
+ (kbd "C-o")
+ (lambda ()
+   (interactive)
+   (other-window 1)))
+
 ;; C-t 上翻页
 ;;(global-set-key "\C-t" 'scroll-down)
 

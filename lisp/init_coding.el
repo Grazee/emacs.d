@@ -73,4 +73,68 @@
 ;;     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 ;;     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
 
+(use-package validate
+  :ensure t)
+
+;; ECB 开发环境
+(use-package ecb
+  :ensure t
+  :config
+  (setq    
+   ;; 使用自定义布局
+   ecb-layout-name "wc-layout"
+
+   ;; 通用配置
+   ;; ecb-auto-activate t
+   ecb-version-check nil
+   ecb-tip-of-the-day nil
+   ecb-auto-compatibility-check nil
+
+   ;; 树状图配置
+   ;; ecb-tree-buffer-style '
+
+   ;; directories窗口设置
+   ecb-show-sources-in-directories-buffer 'always
+   ecb-auto-expand-directory-tree 'best
+   ecb-windows-width 0.2
+
+   ;; methods窗口设置
+   ecb-auto-expand-tag-tree 'all
+   ;; ecb-auto-update-methods-after-save t
+   ecb-highlight-tag-with-point 'highlight-scroll)
+  :bind
+  ("C-1" . 'ecb-goto-window-directories)
+  ("C-2" . 'ecb-goto-window-methods)
+  ("C-3" . 'ecb-goto-window-edit-by-smart-selection))
+
+(defvar ecb-running nil)
+(defun switch-ecb ()
+  (interactive)
+  (if ecb-running
+      (progn
+        (ecb-deactivate)
+        (setq ecb-running nil))
+    (progn
+      (ecb-activate)
+      (setq ecb-running t))))
+
+(global-set-key (kbd "M-0") 'switch-ecb)
+
+;; 自定义ECB布局
+(ecb-layout-define "wc-layout" left nil
+                   ;; The frame is already splitted side-by-side and point stays in the
+                   ;; left window (= the ECB-tree-window-column)
+                   
+                   ;; Here is the creation code for the new layout
+                   ;; 1. Defining the current window/buffer as ECB-methods buffer
+                   (ecb-set-directories-buffer)
+                   ;; 2. Splitting the ECB-tree-windows-column in two windows
+                   (ecb-split-ver 0.6 t)
+                   ;; 3. Go to the second window
+                   (other-window 1)
+                   ;; 4. Defining the current window/buffer as ECB-history buffer
+                   (ecb-set-methods-buffer)
+                   ;; 5. Make the ECB-edit-window current (see Postcondition above)
+                   (select-window (next-window)))
+
 (provide 'init_coding)

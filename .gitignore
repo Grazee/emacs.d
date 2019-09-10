@@ -52,3 +52,6 @@ flycheck_*.el
 /ac-comphist.dat
 /smex-items
 projectile-bookmarks.eld
+lisp/custom*
+.cache*
+transient*
