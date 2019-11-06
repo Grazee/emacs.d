@@ -9,16 +9,20 @@
 
 ;; python设置
 (defun my-python-mode-config ()
-  (setq python-indent 4
-        indent-tabs-mode nil
-        default-tab-width 4
+  (setq
+   ;; 缩进长度4个空格
+   python-indent 4
+   ;; 使用空格而不是tab进行缩进
+   indent-tabs-mode nil
+   ;; 如果有tab的话就解释成4个空格
+   default-tab-width 4
 
-        ;; 设置 run-python 的参数
-	python-shell-interpreter (concat python3Dic "/python3")
-	python-shell-completion-native-enable nil
-	py-python-command (concat python3Dic "/python3")
-	exec-path (append exec-path '(python3Dic))
-	python-shell-completion-native-disabled-interpreters '("python")))
+   ;; 设置 run-python 的参数，主要是python3解释器的路径，不然默认用的是python2
+   python-shell-interpreter (concat python3Dic "/python3")
+   python-shell-completion-native-enable nil
+   py-python-command (concat python3Dic "/python3")
+   exec-path (append exec-path '(python3Dic))
+   python-shell-completion-native-disabled-interpreters '("python")))
 
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
