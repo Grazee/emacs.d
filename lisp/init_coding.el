@@ -137,4 +137,8 @@
                    ;; 5. Make the ECB-edit-window current (see Postcondition above)
                    (select-window (next-window)))
 
+;; Git工具
+(use-package magit
+  :ensure t)
+
 (provide 'init_coding)

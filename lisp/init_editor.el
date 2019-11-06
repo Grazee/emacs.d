@@ -110,7 +110,14 @@
     (global-set-key (kbd "M-x") 'smex)
     (global-set-key (kbd "M-X") 'smex-major-mode-commands)
     ;; This is your old M-x.
-    (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+    (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+    (defun smex-prepare-ido-bindings ()
+      (define-key ido-completion-map (kbd "TAB") #'minibuffer-complete)
+      (define-key ido-completion-map (kbd "M-p") #'previous-history-element)
+      (define-key ido-completion-map (kbd "M-.") #'smex-find-function)
+      (define-key ido-completion-map (kbd "C-h") #'delete-backward-char)
+      (define-key ido-completion-map (kbd "C-a") #'move-beginning-of-line))))
+    
 
 ;; 左侧文件导航
 ;; (use-package treemacs
