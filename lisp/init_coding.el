@@ -1,4 +1,5 @@
 (require 'package)
+(require 'init_profile)
 
 ;; 关闭自动缩进
 (set (make-local-variable 'electric-indent-mode) nil)
@@ -16,7 +17,8 @@
   (progn
     (python-mode . flycheck-mode)
     (c++-mode . flycheck-mode)
-    (go-mode . flycheck-mode)))
+    (go-mode . flycheck-mode)
+    (lua-mode . flycheck-mode)))
 
 ;; Company自动补全
 (use-package company
@@ -38,6 +40,7 @@
     (emacs-lisp-mode . company-mode)
     (c++-mode . company-mode)
     (makefile-mode . company-mode)
+    (lua-mode . company-mode)
     ;; (go-mode . company-mode)
   (c-mode . company-mode)))
 
@@ -140,5 +143,14 @@
 ;; Git工具
 (use-package magit
   :ensure t)
+
+;; WakaTime敲代码时间统计工具
+(use-package wakatime-mode
+  :ensure t
+  :config
+  (progn
+    ;; (custom-set-variables )
+    (custom-set-variables '(wakatime-api-key key-wakatime))
+    (global-wakatime-mode)))
 
 (provide 'init_coding)

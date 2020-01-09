@@ -12,6 +12,12 @@
 ;; 选中文字后输入会进行替换
 (delete-selection-mode t)
 
+;; 窗口黄金比例
+(use-package golden-ratio
+  :ensure t
+  :init
+  (golden-ratio-mode 1))
+
 ;; 自动补全右括号
 (use-package smartparens
   :ensure t

@@ -55,5 +55,7 @@ projectile-bookmarks.eld
 lisp/custom*
 .cache*
 transient*
+rpc-venv/
+/lisp/init_profile.el
 
 .mc-lists.el
