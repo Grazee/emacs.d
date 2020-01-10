@@ -18,7 +18,8 @@
     (python-mode . flycheck-mode)
     (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
-    (lua-mode . flycheck-mode)))
+    (lua-mode . flycheck-mode)
+    (typescript-mode . flyspell-mode)))
 
 ;; Company自动补全
 (use-package company
@@ -41,8 +42,9 @@
     (c++-mode . company-mode)
     (makefile-mode . company-mode)
     (lua-mode . company-mode)
+    (typescript-mode . company-mode)
     ;; (go-mode . company-mode)
-  (c-mode . company-mode)))
+    (c-mode . company-mode)))
 
 ;; (use-package eldoc-mode
 ;;   :ensure t

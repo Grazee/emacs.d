@@ -27,6 +27,7 @@
 (require 'init_lisp)
 (require 'init_cpp)
 (require 'init_go)
+(require 'init_typescript)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)
