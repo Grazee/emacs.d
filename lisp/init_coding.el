@@ -19,7 +19,7 @@
     (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
     (lua-mode . flycheck-mode)
-    (typescript-mode . flyspell-mode)))
+    (typescript-mode . flycheck-mode)))
 
 ;; Company自动补全
 (use-package company

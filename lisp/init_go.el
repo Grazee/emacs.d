@@ -1,11 +1,10 @@
 (require 'package)
+(require 'init_profile)
 
 ;; 保存代码前进行格式化
 ;; (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; 设置路径变量
-(setq gopath "/Users/wc/Code/CoffeeProxy")
-;; (setq gopath "/Users/wc/Code/Temp")
 (setenv "GOPATH" gopath)
 (setenv "PATH" (concat (getenv "PATH")
                        (concat ":"

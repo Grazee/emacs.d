@@ -1,4 +1,5 @@
 (require 'package)
+(require 'init_profile)
 
 ;; (use-package typescript-mode
 ;;   :ensure t)
@@ -8,6 +9,10 @@
   :ensure t
   :config
   (progn
-    (tide-setup)))
+    (setq tide-project-root typescript-project-root)
+    (tide-start-server)
+    (tide-setup))
+  :hook
+  (typescript-mode . tide-mode))
 
 (provide 'init_typescript)
