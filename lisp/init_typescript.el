@@ -15,7 +15,10 @@
     (tide-start-server)
     (tide-setup))
   :hook
-  (typescript-mode . tide-mode)
-  (typescript-mode . electric-pair-mode))
+  (progn
+    (typescript-mode . tide-mode)
+    (typescript-mode . electric-pair-mode))
+  :bind
+  ("C-c C-j" . 'tide-jump-to-definition))
 
 (provide 'init_typescript)
