@@ -12,11 +12,11 @@
 
 ;; 代码检查
 (use-package flycheck
-  :ensure t  
+  :ensure t
   :hook
   (progn
     (python-mode . flycheck-mode)
-    (c++-mode . flycheck-mode)
+    ;; (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
     (lua-mode . flycheck-mode)
     (typescript-mode . flycheck-mode)))
@@ -25,17 +25,17 @@
 (use-package company
   :ensure t
   :config  
-  (setq completion-ignore-case t ;; 忽略大小写
-        ;; 补全延迟（不要延迟）
-        company-idle-delay 0
-        ;; 根据使用频次排序
-        company-transformers '(company-sort-by-occurrence)
-        ;; 输入多少个符号开启补全
-        company-minimum-prefix-length 1
-        ;; 菜单可循环
-        company-selection-wrap-around t)
-  ;; :init
-  ;; (global-company-mode))
+  (setq
+   ;; 忽略大小写
+   completion-ignore-case t
+   ;; 补全延迟（不要延迟）
+   company-idle-delay 0
+   ;; 根据使用频次排序
+   company-transformers '(company-sort-by-occurrence)
+   ;; 输入多少个符号开启补全
+   company-minimum-prefix-length 1
+   ;; 菜单可循环
+   company-selection-wrap-around t)
   :hook
   (progn
     (emacs-lisp-mode . company-mode)

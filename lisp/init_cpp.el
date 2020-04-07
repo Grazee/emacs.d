@@ -1,5 +1,8 @@
 ;; (require 'package)
 
+;; 自动补全括号
+(add-hook 'c++-mode-hook 'electric-pair-mode)
+
 ;; 快速跳转到函数定义位置（自动标记tag）
 (use-package ggtags
   :ensure t
