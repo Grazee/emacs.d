@@ -1,4 +1,4 @@
-;; (require 'package)
+(require 'package)
 
 ;; 自动补全括号
 (add-hook 'c++-mode-hook 'electric-pair-mode)
@@ -30,12 +30,12 @@
                tab-width 4))
 
 ;; 预设代码块
-(use-package yasnippet
-  :ensure t
-  :config
-  (add-hook 'c-mode-common-hook
-            (lambda ()
-              (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-                (ggtags-mode 1)))))
+;; (use-package yasnippet
+;;   :ensure t
+;;   :config
+;;   (add-hook 'c-mode-common-hook
+;;             (lambda ()
+;;               (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+;;                 (ggtags-mode 1)))))
 
 (provide 'init_cpp)

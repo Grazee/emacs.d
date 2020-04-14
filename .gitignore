@@ -58,6 +58,9 @@ transient*
 rpc-venv/
 /lisp/init_profile.el
 /lisp/custom.el
+meghanada
+workspace
+.lsp-session-*
 
 
 .mc-lists.el

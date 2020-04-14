@@ -10,6 +10,12 @@
 ;; 括号高亮
 (show-paren-mode)
 
+;; 代码块补全
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
+
 ;; 代码检查
 (use-package flycheck
   :ensure t
@@ -19,6 +25,7 @@
     ;; (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
     (lua-mode . flycheck-mode)
+    ;; (java-mode . flycheck-mode)
     (typescript-mode . flycheck-mode)))
 
 ;; Company自动补全
@@ -43,6 +50,7 @@
     (makefile-mode . company-mode)
     (lua-mode . company-mode)
     (typescript-mode . company-mode)
+    ;; (java-mode . company-mode)
     ;; (go-mode . company-mode)
     (c-mode . company-mode)))
 
