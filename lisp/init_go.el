@@ -16,7 +16,7 @@
   :init
   (progn
     (setq gofmt-command "goimports")
-    (setq godef-command (concatenate 'string gopath "/bin/godef"))
+    (setq godef-command (concat gopath "/bin/godef"))
     (add-hook 'before-save-hook 'gofmt-before-save))
     ;; (bind-key [remap find-tag] #'godef-jump))
   :config
@@ -33,7 +33,7 @@
   :config
   (progn
     ;; 设置二进制文件地址
-    (setq company-go-gocode-command (concatenate 'string gopath "/bin/gocode"))
+    (setq company-go-gocode-command (concat gopath "/bin/gocode"))
     (add-hook 'go-mode-hook
               (lambda ()
                 (set (make-local-variable 'company-backends) '(company-go))

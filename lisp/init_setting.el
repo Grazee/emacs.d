@@ -1,6 +1,11 @@
 ;; 设置环境变量
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
+;; 启动窗口位置和大小
+(set-frame-position (selected-frame) 0 0)
+(set-frame-width (selected-frame) 200)
+(set-frame-height (selected-frame) 150)
+
 ;; 自动加载外部修改过的文件
 (global-auto-revert-mode 1)
 
