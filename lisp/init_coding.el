@@ -19,10 +19,13 @@
 ;; 代码检查
 (use-package flycheck
   :ensure t
+  :config
+  (setq flycheck-clang-language-standard "c++14"
+        flycheck-gcc-language-standard "c++14")
   :hook
   (progn
     (python-mode . flycheck-mode)
-    ;; (c++-mode . flycheck-mode)
+    (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
     (lua-mode . flycheck-mode)
     ;; (java-mode . flycheck-mode)

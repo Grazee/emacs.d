@@ -16,7 +16,7 @@
 ;; 编辑器
 (require 'init_editor)  ;; 编辑器相关，光标移动什么的
 (require 'init_org)     ;; Org编辑模式
-(require 'table)        ;; 表格编辑器
+;; (require 'table)        ;; 表格编辑器
 
 ;; 代码
 (require 'init_coding)
@@ -28,7 +28,7 @@
 (require 'init_cpp)
 ;; (require 'init_java)
 (require 'init_go)
-(require 'init_typescript)
+;; (require 'init_typescript)
 (require 'init_csharp)
 
 ;; 默认全屏
