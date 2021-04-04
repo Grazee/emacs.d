@@ -27,7 +27,7 @@
 (require 'init_lisp)
 (require 'init_cpp)
 ;; (require 'init_java)
-(require 'init_go)
+;; (require 'init_go)
 ;; (require 'init_typescript)
 ;; (require 'init_csharp)
 (require 'init_web)
