@@ -12,7 +12,7 @@
 (require 'init_theme)   ;; 主题
 ;; (if (eq system-type 'darwin)
     ;; (require 'init_proxy)   ;; 网络代理
-(setq url-proxy-services '(("http" . "127.0.0.1:1087")))
+;; (setq url-proxy-services '(("http" . "127.0.0.1:1087")))
 ;; 编辑器
 (require 'init_editor)  ;; 编辑器相关，光标移动什么的
 (require 'init_org)     ;; Org编辑模式
@@ -27,9 +27,9 @@
 (require 'init_lisp)
 (require 'init_cpp)
 ;; (require 'init_java)
-;; (require 'init_go)
+(require 'init_go)
 ;; (require 'init_typescript)
-;; (require 'init_csharp)
+(require 'init_csharp)
 (require 'init_web)
 
 ;; 默认全屏

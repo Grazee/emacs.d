@@ -10,7 +10,7 @@
 (defun my-python-mode-config ()
   (setq
    ;; 缩进长度4个空格
-   python-indent 2
+   python-indent 4
    ;; 使用空格而不是tab进行缩进
    indent-tabs-mode nil
    ;; 如果有tab的话就解释成4个空格
@@ -23,6 +23,7 @@
 
 ;;启用elpy的python开发环境，包括创建python虚拟环境
 (use-package elpy
+  :defer t
   :ensure t
   :config
   (setq
@@ -33,6 +34,7 @@
 
 ;; python自动补全工具
 (use-package company-jedi
+  :defer t
   :ensure t
   :init
   (progn

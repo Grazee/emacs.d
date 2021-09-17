@@ -31,10 +31,10 @@
   (popwin-mode))
 
 ;; 在minibuff显示相关的快捷键
-(use-package which-key
-  :ensure t
-  :config
-  (which-key-mode))
+;; (use-package which-key
+;;   :ensure t
+;;   :config
+;;   (which-key-mode))
 
 ;; 可以用数字切换窗口
 (use-package ace-window
@@ -86,8 +86,7 @@
 
 ;; 用swiper需要附加的一个东西
 (use-package counsel
-  :ensure t
-  )
+  :ensure t)
 
 ;; 很方便的光标移动
 (use-package swiper
