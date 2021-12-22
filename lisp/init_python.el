@@ -2,7 +2,8 @@
 
 (if (eq system-type 'darwin)
     ;; MacOS的python3目录
-    (setq python3Dic "/usr/local/bin")
+    ;; (setq python3Dic "/usr/local/bin")
+  (setq python3Dic "/usr/local/opt/python@3.8/bin")
   ;; 其他Linux系统的python3目录
   (setq python3Dic "/usr/bin"))
 
