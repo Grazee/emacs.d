@@ -58,9 +58,11 @@
 ;; 一次性把所有连续的空格删掉
 (use-package hungry-delete
   :ensure t
-  :config
-  (global-hungry-delete-mode)
-  (setq hungry-delete-chars-to-skip " \t\r\f\v"))
+  :init
+  (progn
+    (global-hungry-delete-mode)
+    (setq hungry-delete-chars-to-skip " \t\r\f\v")
+    (add-to-list 'hungry-delete-except-modes 'minibuffer-mode)))
 
 ;; 选择模式的扩展
 (use-package expand-region
