@@ -31,6 +31,7 @@
 ;; (require 'init_typescript)
 ;; (require 'init_csharp)
 (require 'init_web)
+(require 'init_yaml)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)
