@@ -53,17 +53,31 @@
 (use-package lsp-mode
   :ensure t
   :config
+  (setq
+   lsp-idle-delay 0
+   lsp-pyls-plugins-flake8-enabled nil)
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)
      ("pyls.plugins.pyls_black.enabled" t t)
      ("pyls.plugins.pyls_isort.enabled" t t)))
   :hook
-  ((python-mode . lsp-mode)))
+  ((python-mode . lsp)))
 
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode)
+  :commands lsp-ui-mode
+  :config
+  (setq
+   lsp-ui-sideline-show-hover t
+   lsp-ui-sideline-delay 0
+   lsp-ui-doc-delay 5
+   lsp-ui-sideline-ignore-duplicates t
+   lsp-ui-doc-position 'bottom
+   lsp-ui-doc-alignment 'frame
+   lsp-ui-doc-header nil
+   lsp-ui-doc-include-signature t
+   lsp-ui-doc-use-childframe t))
 
 (provide 'init_python)
 ;;; init_python ends here
