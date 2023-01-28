@@ -5,15 +5,17 @@
   :ensure t
   :init
   (progn
-    (exec-path-from-shell-copy-env "PATH")
-    (exec-path-from-shell-copy-env "GOPATH")))
+    (exec-path-from-shell-copy-env "PATH")))
+    ;; (exec-path-from-shell-copy-env "GOPATH")))
   
 
 (use-package go-mode
   :ensure t
   :init
   (progn
-    (setq gofmt-command "goimports")
+    (setq gofmt-command "goimports"
+          indent-tabs-mode nil
+          tab-width 4)
     (setq godef-command (concat gopath "/bin/godef"))
     (add-hook 'before-save-hook 'gofmt-before-save))
     ;; (bind-key [remap find-tag] #'godef-jump))

@@ -55,7 +55,7 @@
   :config
   (setq
    lsp-idle-delay 0
-   lsp-pyls-plugins-flake8-enabled nil)
+   lsp-pyls-plugins-flake8-enabled -1)
   (lsp-register-custom-settings
    '(("pyls.plugins.pyls_mypy.enabled" t t)
      ("pyls.plugins.pyls_mypy.live_mode" nil t)

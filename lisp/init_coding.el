@@ -10,6 +10,12 @@
 ;; 括号高亮
 (show-paren-mode)
 
+;; 缩进宽度
+(setq-default
+ tab-width 4
+ standard-indent 4
+ indent-tabs-mode nil)	
+
 ;; 代码块补全
 (use-package yasnippet
   :ensure t
@@ -24,7 +30,7 @@
         flycheck-gcc-language-standard "c++14")
   :hook
   (progn
-    (python-mode . flycheck-mode)
+    ;; (python-mode . flycheck-mode)
     (c++-mode . flycheck-mode)
     (go-mode . flycheck-mode)
     (lua-mode . flycheck-mode)
@@ -55,7 +61,8 @@
     (typescript-mode . company-mode)
     ;; (java-mode . company-mode)
     ;; (go-mode . company-mode)
-    (c-mode . company-mode)))
+    (c-mode . company-mode)
+    (solidity-mode . company-mode)))
 
 ;; (use-package eldoc-mode
 ;;   :ensure t
@@ -158,12 +165,12 @@
   :ensure t)
 
 ;; WakaTime敲代码时间统计工具
-(use-package wakatime-mode
-  :ensure t
-  :config
-  (progn
-    ;; (custom-set-variables )
-    (custom-set-variables '(wakatime-api-key key-wakatime))
-    (global-wakatime-mode)))
+;; (use-package wakatime-mode
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     ;; (custom-set-variables )
+;;     (custom-set-variables '(wakatime-api-key key-wakatime))
+;;     (global-wakatime-mode)))
 
 (provide 'init_coding)

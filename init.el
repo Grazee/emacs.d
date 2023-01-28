@@ -21,7 +21,7 @@
 ;; 代码
 (require 'init_coding)
 (require 'init_elisp)
-(require 'init_python)
+;; (require 'init_python)
 ;;(require 'init_swift)
 (require 'init_markdown)
 (require 'init_lisp)
@@ -31,7 +31,10 @@
 ;; (require 'init_typescript)
 ;; (require 'init_csharp)
 (require 'init_web)
+(require 'init_solidity)
 (require 'init_yaml)
 
 ;; 默认全屏
 ;;(toggle-frame-fullscreen)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
