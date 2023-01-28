@@ -2,7 +2,7 @@
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 
 ;; 全屏显示
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
+;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
 ;; 自动加载外部修改过的文件
 (global-auto-revert-mode 1)
