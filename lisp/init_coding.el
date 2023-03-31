@@ -62,6 +62,7 @@
     ;; (java-mode . company-mode)
     ;; (go-mode . company-mode)
     (c-mode . company-mode)
+    (js-mode . company-mode)
     (solidity-mode . company-mode)))
 
 ;; (use-package eldoc-mode
@@ -172,5 +173,19 @@
 ;;     ;; (custom-set-variables )
 ;;     (custom-set-variables '(wakatime-api-key key-wakatime))
 ;;     (global-wakatime-mode)))
+
+(use-package jenkinsfile-mode
+  :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t)
+
+;; 使用github copilot
+(require 'quelpa-use-package)
+(use-package copilot
+  :quelpa (copilot :fetcher github
+                   :repo "zerolfx/copilot.el"
+                   :branch "main"
+                   :files ("dist" "*.el")))
 
 (provide 'init_coding)

@@ -9,7 +9,8 @@
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (package-install 'use-package))
+  (package-install 'use-package)
+  (package-install 'quelpa-use-package))
 
 ;; 不用安装也可以使用包，尝试一下
 (use-package try
