@@ -12,7 +12,7 @@
 (require 'init_theme)   ;; 主题
 ;; (if (eq system-type 'darwin)
 ;; (require 'init_proxy)   ;; 网络代理
-(require 'use-proxy)
+;;(require 'use-proxy)
 (setenv "all_proxy" "http://127.0.0.1:1080")
 (setenv "http_proxy" "http://127.0.0.1:1080")
 (setenv "https_proxy" "http://127.0.0.1:1080")

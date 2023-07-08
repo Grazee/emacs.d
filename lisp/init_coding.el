@@ -65,11 +65,6 @@
     (js-mode . company-mode)
     (solidity-mode . company-mode)))
 
-;; (use-package eldoc-mode
-;;   :ensure t
-;;   :hook
-;;   (go-mode . eldoc-mode-hook))
-
 ;; 使用M-n和M-p来选择补全
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "M-n") nil)
@@ -78,101 +73,12 @@
   (define-key company-active-map (kbd "M-n") #'company-select-next)
   (define-key company-active-map (kbd "M-p") #'company-select-previous))
 
-;; 自动补全
-;; (use-package auto-complete
-;;   :ensure t
-;;   :init
-;;   (progn
-;;     (ac-config-default)
-;;     (global-auto-complete-mode t)
-;;     (local-set-key (kbd "C-h") 'delete-backward-char)))
-
-;; 项目管理
-;; (use-package projectile
-;;   :ensure t
-;;   :bind
-;;   ("C-c p" . projectile-command-map)
-;;   :init
-;;   (lambda ()
-;;     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-;;     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
-
 (use-package validate
   :ensure t)
-
-;; ECB 开发环境
-;; (use-package ecb
-;;   :ensure t
-;;   :config
-;;   (setq    
-;;    ;; 使用自定义布局
-;;    ecb-layout-name "wc-layout"
-
-;;    ;; 通用配置
-;;    ;; ecb-auto-activate t
-;;    ecb-version-check nil
-;;    ecb-tip-of-the-day nil
-;;    ecb-auto-compatibility-check nil
-
-;;    ;; 树状图配置
-;;    ;; ecb-tree-buffer-style '
-
-;;    ;; directories窗口设置
-;;    ecb-show-sources-in-directories-buffer 'always
-;;    ecb-auto-expand-directory-tree 'best
-;;    ecb-windows-width 0.2
-
-;;    ;; methods窗口设置
-;;    ecb-auto-expand-tag-tree 'all
-;;    ;; ecb-auto-update-methods-after-save t
-;;    ecb-highlight-tag-with-point 'highlight-scroll)
-;;   :bind
-;;   ("C-1" . 'ecb-goto-window-directories)
-;;   ("C-2" . 'ecb-goto-window-methods)
-;;   ("C-3" . 'ecb-goto-window-edit-by-smart-selection))
-
-;; (defvar ecb-running nil)
-;; (defun switch-ecb ()
-;;   (interactive)
-;;   (if ecb-running
-;;       (progn
-;;         (ecb-deactivate)
-;;         (setq ecb-running nil))
-;;     (progn
-;;       (ecb-activate)
-;;       (setq ecb-running t))))
-
-;; (global-set-key (kbd "M-0") 'switch-ecb)
-
-;; 自定义ECB布局
-;; (ecb-layout-define "wc-layout" left nil
-;;                    ;; The frame is already splitted side-by-side and point stays in the
-;;                    ;; left window (= the ECB-tree-window-column)
-                   
-;;                    ;; Here is the creation code for the new layout
-;;                    ;; 1. Defining the current window/buffer as ECB-methods buffer
-;;                    (ecb-set-directories-buffer)
-;;                    ;; 2. Splitting the ECB-tree-windows-column in two windows
-;;                    (ecb-split-ver 0.6 t)
-;;                    ;; 3. Go to the second window
-;;                    (other-window 1)
-;;                    ;; 4. Defining the current window/buffer as ECB-history buffer
-;;                    (ecb-set-methods-buffer)
-;;                    ;; 5. Make the ECB-edit-window current (see Postcondition above)
-;;                    (select-window (next-window)))
 
 ;; Git工具
 (use-package magit
   :ensure t)
-
-;; WakaTime敲代码时间统计工具
-;; (use-package wakatime-mode
-;;   :ensure t
-;;   :config
-;;   (progn
-;;     ;; (custom-set-variables )
-;;     (custom-set-variables '(wakatime-api-key key-wakatime))
-;;     (global-wakatime-mode)))
 
 (use-package jenkinsfile-mode
   :ensure t)
@@ -180,8 +86,42 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package lsp-mode
+  :ensure t
+  :config
+  (setq
+   lsp-idle-delay 0
+   lsp-pylsp-plugins-pycodestyle-enabled nil
+   lsp-pylsp-plugins-autopep8-enabled nil
+   lsp-pylsp-plugins-flake8-enabled nil
+   lsp-diagnostics-provider :none)
+  (lsp-register-custom-settings
+   '(("pyls.plugins.pyls_mypy.enabled" t t)
+     ("pyls.plugins.pyls_mypy.live_mode" nil t)
+     ("pyls.plugins.pyls_black.enabled" t t)
+     ("pyls.plugins.pyls_isort.enabled" t t)
+     ("pyls.plugins.flake8.enabled" nil t)))
+  :hook
+  ((python-mode . lsp)
+   (go-mode . lsp)))
+
+;; 代码补全后端
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :config
+  (setq
+   lsp-ui-sideline-show-hover t
+   lsp-ui-sideline-delay 0
+   lsp-ui-doc-delay 5
+   lsp-ui-sideline-ignore-duplicates t
+   lsp-ui-doc-position 'bottom
+   lsp-ui-doc-alignment 'frame
+   lsp-ui-doc-header nil
+   lsp-ui-doc-include-signature t
+   lsp-ui-doc-use-childframe t))
+
 ;; 使用github copilot
-(require 'quelpa-use-package)
 (use-package copilot
   :quelpa (copilot :fetcher github
                    :repo "zerolfx/copilot.el"

@@ -28,13 +28,13 @@
   ;;   (go-eldoc-setup)))
 
 ;; go的补全
-(use-package lsp-ui
-  :ensure t)
-(use-package lsp-mode
-  :ensure t
-  :config
-  (progn
-    (add-hook 'go-mode-hook #'lsp-deferred)
-    (add-hook 'go-mode-hook #'yas-minor-mode)))
+;; (use-package lsp-ui
+;;   :ensure t)
+;; (use-package lsp-mode
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     (add-hook 'go-mode-hook #'lsp-deferred)
+;;     (add-hook 'go-mode-hook #'yas-minor-mode)))
 
 (provide 'init_go)
