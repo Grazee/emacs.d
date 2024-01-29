@@ -77,8 +77,8 @@
   :ensure t)
 
 ;; Git工具
-(use-package magit
-  :ensure t)
+;; (use-package magit
+;;   :ensure t)
 
 (use-package jenkinsfile-mode
   :ensure t)
